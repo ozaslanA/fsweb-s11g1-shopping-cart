@@ -1,12 +1,15 @@
 import React from "react";
 import { ScCartCheckout } from "./scParts";
+import { useContext } from "react";
+import { CartContext } from "../contexts/CartContext";
 
 // Components
 import Item from "./ShoppingCartItem";
 
-const ShoppingCart = (props) => {
+const ShoppingCart = () => {
+  const { cart } = useContext(CartContext);
   const getCartTotal = () => {
-    return props.cart
+    return cart
       .reduce((acc, value) => {
         return acc + value.price;
       }, 0)
@@ -15,7 +18,7 @@ const ShoppingCart = (props) => {
 
   return (
     <div>
-      {props.cart.map((item) => (
+      {cart.map((item) => (
         <Item key={item.id} {...item} />
       ))}
 

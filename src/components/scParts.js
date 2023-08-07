@@ -117,7 +117,7 @@ export const ScCartCheckout = styled.div`
   justify-content: space-between;
   align-items: center;
   background: #141618;
-  color: white;
+  color: blue;
 
   button {
     border-color: white;
